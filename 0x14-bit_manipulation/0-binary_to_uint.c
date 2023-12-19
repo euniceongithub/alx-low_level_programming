@@ -8,23 +8,23 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int conv_num;
+	int i;
 
 	conv_num = 0;
+	i = 0;
 
-	if (b == NULL)
+	if (!b)
 		return (0);
-	while (*b != '\0')
+	while (*b)
 	{
-		if (*b == '\0' || *b == '1')
-		{
-			conv_num = conv_num * 2 + (*b - '0');
-			b++;
-		}
-		else
+		if (*b != '\0' && *b != '1')
 		{
 			return (0);
 		}
+		conv_num <<= 1;
+		conv_num |= (*b - '0');
+		b++;
+		i++;
 	}
 	return (conv_num);
 }
-
