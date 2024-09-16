@@ -4,7 +4,8 @@
 #include <stdlib.h>
 #include "main.h"
 
-/** create_file - creates file with specific permissions and content
+/**
+ * create_file - creates file with specific permissions and content
  * @filename: name of file
  * @text_content: NULL-terminated string to write the file
  *
@@ -27,7 +28,7 @@ int create_file(const char *filename, char *text_content)
 
 	if (text_content != NULL)
 	{
-		while (text_conten[length] != '\0')
+		while (text_content[length] != '\0')
 			length++;
 
 		bytes_written = write(fd, text_content, length);
